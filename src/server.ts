@@ -5,7 +5,7 @@ import { routes } from './routes.js';
 
 setupMongo()
   .then(() => {
-    const port = process.env.PORT;
+    const port = Number(process.env.PORT) || 4000;
     const app = express();
     app.use(express.json());
     app.use(
